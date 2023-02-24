@@ -1,0 +1,1916 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    
+<style type="text/css" media="screen">
+body        { font-family: Microsoft YaHei,Tahoma,arial,helvetica,sans-serif;padding: 20px; font-size: 120%; }
+table       { font-size: 100%; }
+/* -- heading ---------------------------------------------------------------------- */
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+/* -- report ------------------------------------------------------------------------ */
+#total_row  { font-weight: bold; }
+.passCase   { color: #5cb85c; }
+.failCase   { color: #d9534f; font-weight: bold; }
+.errorCase  { color: #f0ad4e; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+</style>
+
+</head>
+<body >
+<script language="javascript" type="text/javascript">
+output_list = Array();
+/*level 调整增加只显示通过用例的分类 --Findyou
+0:Summary //all hiddenRow
+1:Failed  //pt hiddenRow, ft none
+2:Pass    //pt none, ft hiddenRow
+3:All     //pt none, ft none
+*/
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level == 2 || level == 0 ) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level < 2) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+    }
+    //加入【详细】切换文字变化 --Findyou
+    detail_class=document.getElementsByClassName('detail');
+	//console.log(detail_class.length)
+	if (level == 3) {
+		for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="收起"
+		}
+	}
+	else{
+			for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="详细"
+		}
+	}
+}
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        //ID修改 点 为 下划线 -Findyou
+        tid0 = 't' + cid.substr(1) + '_' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        //修改点击无法收起的BUG，加入【详细】切换文字变化 --Findyou
+        if (toHide) {
+            document.getElementById(tid).className = 'hiddenRow';
+            document.getElementById(cid).innerText = "详细"
+        }
+        else {
+            document.getElementById(tid).className = '';
+            document.getElementById(cid).innerText = "收起"
+        }
+    }
+}
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+</script>
+<div class='heading'>
+<h1 style="font-family: Microsoft YaHei">测试报告</h1>
+<p class='attribute'><strong>测试人员 : </strong> 测试</p>
+<p class='attribute'><strong>开始时间 : </strong> 2022-07-05 13:44:25</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:00:51.336444</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 20，错误 20，通过率= 0.00%</p>
+
+<p class='description'></p>
+</div>
+
+
+<p id='show_detail_line'>
+<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 0.00% }</a>
+<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 0 }</a>
+<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 0 }</a>
+<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 20 }</a>
+</p>
+<table id='result_table' class="table table-condensed table-bordered table-hover">
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row' class="text-center success" style="font-weight: bold;font-size: 16px;">
+    <td>用例集/测试用例</td>
+    <td>总计</td>
+    <td>通过</td>
+    <td>失败</td>
+    <td>错误</td>
+    <td>详细</td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>common.test_http_request.TestHttpRequest</td>
+    <td class="text-center">20</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center">20</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c1',20)" class="detail" id='c1'>详细</a></td>
+</tr>
+
+<tr id='ft1_1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_http_request_01</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_1'>错误</button>
+    <div id='div_ft1_1' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_1'>错误</button>
+    <div id='div_ft1_1' class="collapse in" align="left">
+    <pre>
+    
+ft1_1: 2022-07-05 13:44:25,421-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:25,421-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[1, '注册', '手机号和密码正常', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '18318070513', 'pwd': '123456', 'regname': 'regname_0627'}, "{ 'status': 1, 'code': '10001'}"]
+2022-07-05 13:44:25,421-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第1条用例
+2022-07-05 13:44:27,868-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000013B17B764F0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/register?mobilephone=18318070513&amp;pwd=123456&amp;regname=regname_0627 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17B764F0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\test_http_request.py", line 29, in test_http_request
+    res=HttpRequest(IP + a[4],(a[5])).http_request(a[3],cookies=COOKIE)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\http_request.py", line 9, in http_request
+    res=requests.get(self.url,self.param,cookies=cookies)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/register?mobilephone=18318070513&amp;pwd=123456&amp;regname=regname_0627 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17B764F0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_http_request_02</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_2'>错误</button>
+    <div id='div_ft1_2' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_2'>错误</button>
+    <div id='div_ft1_2' class="collapse in" align="left">
+    <pre>
+    
+ft1_2: 2022-07-05 13:44:27,918-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:27,918-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[2, '注册', '手机号和密码正常,注册名不填', 'post', '/futureloan/mvc/api/member/register', {'mobilephone': '18320187023', 'pwd': '123456', 'regname': ''}, "{ 'status': 0, 'code': '20110'}"]
+2022-07-05 13:44:27,918-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第2条用例
+2022-07-05 13:44:30,297-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBB340&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/register?mobilephone=18320187023&amp;pwd=123456&amp;regname= (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBB340&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\test_http_request.py", line 29, in test_http_request
+    res=HttpRequest(IP + a[4],(a[5])).http_request(a[3],cookies=COOKIE)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\http_request.py", line 12, in http_request
+    res=requests.get(self.url,self.param,cookies=cookies)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/register?mobilephone=18320187023&amp;pwd=123456&amp;regname= (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBB340&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_3' class='none'>
+    <td class='errorCase'><div class='testcase'>test_http_request_03</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_3'>错误</button>
+    <div id='div_ft1_3' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_3' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_3'>错误</button>
+    <div id='div_ft1_3' class="collapse in" align="left">
+    <pre>
+    
+ft1_3: 2022-07-05 13:44:30,298-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:30,298-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[3, '注册', '手机号不填，密码正常,', 'post', '/futureloan/mvc/api/member/register', {'mobilephone': '', 'pwd': '123456', 'regname': 'regname_0627'}, "{'status': 0, 'code': '20103'}"]
+2022-07-05 13:44:30,298-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第3条用例
+2022-07-05 13:44:32,746-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000013B17BA5370&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/register?mobilephone=&amp;pwd=123456&amp;regname=regname_0627 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BA5370&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\test_http_request.py", line 29, in test_http_request
+    res=HttpRequest(IP + a[4],(a[5])).http_request(a[3],cookies=COOKIE)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\http_request.py", line 12, in http_request
+    res=requests.get(self.url,self.param,cookies=cookies)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/register?mobilephone=&amp;pwd=123456&amp;regname=regname_0627 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BA5370&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_4' class='none'>
+    <td class='errorCase'><div class='testcase'>test_http_request_04</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_4'>错误</button>
+    <div id='div_ft1_4' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_4' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_4'>错误</button>
+    <div id='div_ft1_4' class="collapse in" align="left">
+    <pre>
+    
+ft1_4: 2022-07-05 13:44:32,746-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:32,746-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[4, '注册', '手机号格式不正确，密码正常,', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '2123456789', 'pwd': '123456', 'regname': ''}, "{ 'status': 0, 'code': '20109'}"]
+2022-07-05 13:44:32,746-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第4条用例
+2022-07-05 13:44:35,126-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBCBE0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/register?mobilephone=2123456789&amp;pwd=123456&amp;regname= (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBCBE0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\test_http_request.py", line 29, in test_http_request
+    res=HttpRequest(IP + a[4],(a[5])).http_request(a[3],cookies=COOKIE)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\http_request.py", line 9, in http_request
+    res=requests.get(self.url,self.param,cookies=cookies)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/register?mobilephone=2123456789&amp;pwd=123456&amp;regname= (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBCBE0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_5' class='none'>
+    <td class='errorCase'><div class='testcase'>test_http_request_05</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_5' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_5'>错误</button>
+    <div id='div_ft1_5' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_5' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_5'>错误</button>
+    <div id='div_ft1_5' class="collapse in" align="left">
+    <pre>
+    
+ft1_5: 2022-07-05 13:44:35,137-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:35,137-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[5, '注册', '手机号格式已被注册，密码正常,', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '18320187023', 'pwd': '123456', 'regname': 'regname_0627'}, '{"status":0,"code":"20110"}']
+2022-07-05 13:44:35,138-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第5条用例
+2022-07-05 13:44:37,497-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000013B17BF5FD0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/register?mobilephone=18320187023&amp;pwd=123456&amp;regname=regname_0627 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BF5FD0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\test_http_request.py", line 29, in test_http_request
+    res=HttpRequest(IP + a[4],(a[5])).http_request(a[3],cookies=COOKIE)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\http_request.py", line 9, in http_request
+    res=requests.get(self.url,self.param,cookies=cookies)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/register?mobilephone=18320187023&amp;pwd=123456&amp;regname=regname_0627 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BF5FD0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_6' class='none'>
+    <td class='errorCase'><div class='testcase'>test_http_request_06</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_6' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_6'>错误</button>
+    <div id='div_ft1_6' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_6' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_6'>错误</button>
+    <div id='div_ft1_6' class="collapse in" align="left">
+    <pre>
+    
+ft1_6: 2022-07-05 13:44:37,497-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:37,497-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[6, '注册', '手机号正常密少于6位', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '18320187020', 'pwd': '12346', 'regname': '密5'}, '{"status":0,"code":"20108"}']
+2022-07-05 13:44:37,497-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第6条用例
+2022-07-05 13:44:39,902-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBC340&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/register?mobilephone=18320187020&amp;pwd=12346&amp;regname=%E5%AF%865 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBC340&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\test_http_request.py", line 29, in test_http_request
+    res=HttpRequest(IP + a[4],(a[5])).http_request(a[3],cookies=COOKIE)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\http_request.py", line 9, in http_request
+    res=requests.get(self.url,self.param,cookies=cookies)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/register?mobilephone=18320187020&amp;pwd=12346&amp;regname=%E5%AF%865 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBC340&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_7' class='none'>
+    <td class='errorCase'><div class='testcase'>test_http_request_07</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_7' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_7'>错误</button>
+    <div id='div_ft1_7' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_7' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_7'>错误</button>
+    <div id='div_ft1_7' class="collapse in" align="left">
+    <pre>
+    
+ft1_7: 2022-07-05 13:44:39,902-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:39,902-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[7, '注册', '手机号正常密码多于18位', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '18320187020', 'pwd': '123456123456789012221', 'regname': '密19'}, '{"status":0,"code":"20108"}']
+2022-07-05 13:44:39,902-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第7条用例
+2022-07-05 13:44:42,253-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBC6D0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/register?mobilephone=18320187020&amp;pwd=123456123456789012221&amp;regname=%E5%AF%8619 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBC6D0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\test_http_request.py", line 29, in test_http_request
+    res=HttpRequest(IP + a[4],(a[5])).http_request(a[3],cookies=COOKIE)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\http_request.py", line 9, in http_request
+    res=requests.get(self.url,self.param,cookies=cookies)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/register?mobilephone=18320187020&amp;pwd=123456123456789012221&amp;regname=%E5%AF%8619 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBC6D0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_8' class='none'>
+    <td class='errorCase'><div class='testcase'>test_http_request_08</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_8' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_8'>错误</button>
+    <div id='div_ft1_8' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_8' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_8'>错误</button>
+    <div id='div_ft1_8' class="collapse in" align="left">
+    <pre>
+    
+ft1_8: 2022-07-05 13:44:42,258-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:42,258-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[8, '登录', '手机号和密码正常', 'get', '/futureloan/mvc/api/member/login', {'mobilephone': '18320187023', 'pwd': '123456'}, "{ 'status': 1, 'code': '10001'}"]
+2022-07-05 13:44:42,258-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第8条用例
+2022-07-05 13:44:44,676-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000013B17BA53D0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/login?mobilephone=18320187023&amp;pwd=123456 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BA53D0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\test_http_request.py", line 29, in test_http_request
+    res=HttpRequest(IP + a[4],(a[5])).http_request(a[3],cookies=COOKIE)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\http_request.py", line 9, in http_request
+    res=requests.get(self.url,self.param,cookies=cookies)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/login?mobilephone=18320187023&amp;pwd=123456 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BA53D0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_9' class='none'>
+    <td class='errorCase'><div class='testcase'>test_http_request_09</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_9' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_9'>错误</button>
+    <div id='div_ft1_9' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_9' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_9'>错误</button>
+    <div id='div_ft1_9' class="collapse in" align="left">
+    <pre>
+    
+ft1_9: 2022-07-05 13:44:44,677-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:44,677-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[9, '登录', '手机号不填，密码正常', 'post', '/futureloan/mvc/api/member/login', {'mobilephone': '', 'pwd': '123456'}, '{"status":0,"code":"20103"}']
+2022-07-05 13:44:44,677-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第9条用例
+2022-07-05 13:44:50,461-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000013B17B76FA0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/login?mobilephone=&amp;pwd=123456 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17B76FA0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\test_http_request.py", line 29, in test_http_request
+    res=HttpRequest(IP + a[4],(a[5])).http_request(a[3],cookies=COOKIE)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\http_request.py", line 12, in http_request
+    res=requests.get(self.url,self.param,cookies=cookies)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/login?mobilephone=&amp;pwd=123456 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17B76FA0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_10' class='none'>
+    <td class='errorCase'><div class='testcase'>test_http_request_10</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_10' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_10'>错误</button>
+    <div id='div_ft1_10' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_10' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_10'>错误</button>
+    <div id='div_ft1_10' class="collapse in" align="left">
+    <pre>
+    
+ft1_10: 2022-07-05 13:44:50,462-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:50,462-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[10, '登录', '手机号未注册，密码正常', 'get', '/futureloan/mvc/api/member/login', {'mobilephone': '18312345678', 'pwd': '123456'}, "{'status': 0, 'code': '20111'}"]
+2022-07-05 13:44:50,462-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第10条用例
+2022-07-05 13:44:52,867-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000013B17B6D490&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/login?mobilephone=18312345678&amp;pwd=123456 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17B6D490&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\test_http_request.py", line 29, in test_http_request
+    res=HttpRequest(IP + a[4],(a[5])).http_request(a[3],cookies=COOKIE)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\http_request.py", line 9, in http_request
+    res=requests.get(self.url,self.param,cookies=cookies)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/login?mobilephone=18312345678&amp;pwd=123456 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17B6D490&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_11' class='none'>
+    <td class='errorCase'><div class='testcase'>test_http_request_11</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_11' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_11'>错误</button>
+    <div id='div_ft1_11' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_11' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_11'>错误</button>
+    <div id='div_ft1_11' class="collapse in" align="left">
+    <pre>
+    
+ft1_11: 2022-07-05 13:44:52,869-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:52,869-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[11, '登录', '手机号正确且已注册，密码错误', 'post', '/futureloan/mvc/api/member/login', {'mobilephone': '18320187023', 'pwd': '00000000'}, "{'status': 0, 'code': '20111'}"]
+2022-07-05 13:44:52,870-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第11条用例
+2022-07-05 13:44:55,228-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000013B17B6D820&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/login?mobilephone=18320187023&amp;pwd=00000000 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17B6D820&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\test_http_request.py", line 29, in test_http_request
+    res=HttpRequest(IP + a[4],(a[5])).http_request(a[3],cookies=COOKIE)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\http_request.py", line 12, in http_request
+    res=requests.get(self.url,self.param,cookies=cookies)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/login?mobilephone=18320187023&amp;pwd=00000000 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17B6D820&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_12' class='none'>
+    <td class='errorCase'><div class='testcase'>test_http_request_12</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_12' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_12'>错误</button>
+    <div id='div_ft1_12' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_12' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_12'>错误</button>
+    <div id='div_ft1_12' class="collapse in" align="left">
+    <pre>
+    
+ft1_12: 2022-07-05 13:44:55,228-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:55,228-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[12, '登录', '手机号正确且已注册，密码空', 'get', '/futureloan/mvc/api/member/login', {'mobilephone': '18320187023', 'pwd': ' '}, "{'status': 0, 'code': '20103'}"]
+2022-07-05 13:44:55,228-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第12条用例
+2022-07-05 13:44:57,638-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000013B17B6D640&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/login?mobilephone=18320187023&amp;pwd=+ (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17B6D640&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\test_http_request.py", line 29, in test_http_request
+    res=HttpRequest(IP + a[4],(a[5])).http_request(a[3],cookies=COOKIE)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\http_request.py", line 9, in http_request
+    res=requests.get(self.url,self.param,cookies=cookies)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/login?mobilephone=18320187023&amp;pwd=+ (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17B6D640&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_13' class='none'>
+    <td class='errorCase'><div class='testcase'>test_http_request_13</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_13' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_13'>错误</button>
+    <div id='div_ft1_13' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_13' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_13'>错误</button>
+    <div id='div_ft1_13' class="collapse in" align="left">
+    <pre>
+    
+ft1_13: 2022-07-05 13:44:57,640-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:57,641-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[13, '充值', '手机号和充值额度正常', 'post', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': 50.0}, "{'code': '10001'}"]
+2022-07-05 13:44:57,641-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第13条用例
+2022-07-05 13:45:00,010-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBB7F0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/recharge?mobilephone=18320187023&amp;amount=50.0 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBB7F0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\test_http_request.py", line 29, in test_http_request
+    res=HttpRequest(IP + a[4],(a[5])).http_request(a[3],cookies=COOKIE)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\http_request.py", line 12, in http_request
+    res=requests.get(self.url,self.param,cookies=cookies)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/recharge?mobilephone=18320187023&amp;amount=50.0 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBB7F0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_14' class='none'>
+    <td class='errorCase'><div class='testcase'>test_http_request_14</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_14' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_14'>错误</button>
+    <div id='div_ft1_14' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_14' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_14'>错误</button>
+    <div id='div_ft1_14' class="collapse in" align="left">
+    <pre>
+    
+ft1_14: 2022-07-05 13:45:00,010-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:45:00,010-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[14, '充值', '充值额度50万', 'get', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': 500000.0}, " {'status': 1, 'code': '10001'}"]
+2022-07-05 13:45:00,010-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第14条用例
+2022-07-05 13:45:02,339-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000013B17BA5820&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/recharge?mobilephone=18320187023&amp;amount=500000.0 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BA5820&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\test_http_request.py", line 29, in test_http_request
+    res=HttpRequest(IP + a[4],(a[5])).http_request(a[3],cookies=COOKIE)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\http_request.py", line 9, in http_request
+    res=requests.get(self.url,self.param,cookies=cookies)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/recharge?mobilephone=18320187023&amp;amount=500000.0 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BA5820&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_15' class='none'>
+    <td class='errorCase'><div class='testcase'>test_http_request_15</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_15' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_15'>错误</button>
+    <div id='div_ft1_15' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_15' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_15'>错误</button>
+    <div id='div_ft1_15' class="collapse in" align="left">
+    <pre>
+    
+ft1_15: 2022-07-05 13:45:02,341-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:45:02,342-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[15, '充值', '充值额度小于0', 'post', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': -1.0}, "{'status': 0, 'code': '20117'}"]
+2022-07-05 13:45:02,342-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第15条用例
+2022-07-05 13:45:04,794-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000013B17BF5700&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/recharge?mobilephone=18320187023&amp;amount=-1.0 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BF5700&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\test_http_request.py", line 29, in test_http_request
+    res=HttpRequest(IP + a[4],(a[5])).http_request(a[3],cookies=COOKIE)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\http_request.py", line 12, in http_request
+    res=requests.get(self.url,self.param,cookies=cookies)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/recharge?mobilephone=18320187023&amp;amount=-1.0 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BF5700&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_16' class='none'>
+    <td class='errorCase'><div class='testcase'>test_http_request_16</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_16' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_16'>错误</button>
+    <div id='div_ft1_16' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_16' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_16'>错误</button>
+    <div id='div_ft1_16' class="collapse in" align="left">
+    <pre>
+    
+ft1_16: 2022-07-05 13:45:04,794-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:45:04,794-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[16, '充值', '充值额度多余50万', 'get', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': 500001.0}, "{'status': 0, 'code': '20117'}"]
+2022-07-05 13:45:04,794-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第16条用例
+2022-07-05 13:45:07,272-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBCF40&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/recharge?mobilephone=18320187023&amp;amount=500001.0 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBCF40&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\test_http_request.py", line 29, in test_http_request
+    res=HttpRequest(IP + a[4],(a[5])).http_request(a[3],cookies=COOKIE)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\http_request.py", line 9, in http_request
+    res=requests.get(self.url,self.param,cookies=cookies)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/recharge?mobilephone=18320187023&amp;amount=500001.0 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBCF40&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_17' class='none'>
+    <td class='errorCase'><div class='testcase'>test_http_request_17</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_17' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_17'>错误</button>
+    <div id='div_ft1_17' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_17' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_17'>错误</button>
+    <div id='div_ft1_17' class="collapse in" align="left">
+    <pre>
+    
+ft1_17: 2022-07-05 13:45:07,272-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:45:07,272-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[17, '充值', '充值额度小数点多余两位', 'post', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': 100.5642}, "{'status': 0, 'code': '20116'}"]
+2022-07-05 13:45:07,278-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第17条用例
+2022-07-05 13:45:09,614-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBC2B0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/recharge?mobilephone=18320187023&amp;amount=100.5642 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBC2B0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\test_http_request.py", line 29, in test_http_request
+    res=HttpRequest(IP + a[4],(a[5])).http_request(a[3],cookies=COOKIE)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\http_request.py", line 12, in http_request
+    res=requests.get(self.url,self.param,cookies=cookies)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/recharge?mobilephone=18320187023&amp;amount=100.5642 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBC2B0&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_18' class='none'>
+    <td class='errorCase'><div class='testcase'>test_http_request_18</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_18' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_18'>错误</button>
+    <div id='div_ft1_18' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_18' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_18'>错误</button>
+    <div id='div_ft1_18' class="collapse in" align="left">
+    <pre>
+    
+ft1_18: 2022-07-05 13:45:09,614-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:45:09,614-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[18, '充值', '充值额度为空', 'get', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': ''}, "{'status': 0, 'code': '20115'}"]
+2022-07-05 13:45:09,614-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第18条用例
+2022-07-05 13:45:12,010-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBC490&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/recharge?mobilephone=18320187023&amp;amount= (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBC490&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\test_http_request.py", line 29, in test_http_request
+    res=HttpRequest(IP + a[4],(a[5])).http_request(a[3],cookies=COOKIE)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\http_request.py", line 9, in http_request
+    res=requests.get(self.url,self.param,cookies=cookies)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/recharge?mobilephone=18320187023&amp;amount= (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BBC490&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_19' class='none'>
+    <td class='errorCase'><div class='testcase'>test_http_request_19</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_19' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_19'>错误</button>
+    <div id='div_ft1_19' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_19' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_19'>错误</button>
+    <div id='div_ft1_19' class="collapse in" align="left">
+    <pre>
+    
+ft1_19: 2022-07-05 13:45:12,010-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:45:12,010-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[19, '充值', '充值额度非数字', 'post', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': '@!'}, "{'status': 0, 'code': '20118'}"]
+2022-07-05 13:45:12,014-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第19条用例
+2022-07-05 13:45:14,358-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000013B17BF5610&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/recharge?mobilephone=18320187023&amp;amount=%40%21 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BF5610&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\test_http_request.py", line 29, in test_http_request
+    res=HttpRequest(IP + a[4],(a[5])).http_request(a[3],cookies=COOKIE)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\http_request.py", line 12, in http_request
+    res=requests.get(self.url,self.param,cookies=cookies)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/recharge?mobilephone=18320187023&amp;amount=%40%21 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BF5610&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1_20' class='none'>
+    <td class='errorCase'><div class='testcase'>test_http_request_20</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_20' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_20'>错误</button>
+    <div id='div_ft1_20' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_20' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_20'>错误</button>
+    <div id='div_ft1_20' class="collapse in" align="left">
+    <pre>
+    
+ft1_20: 2022-07-05 13:45:14,358-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:45:14,358-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[20, '充值', '不是会员', 'get', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18212345678', 'amount': 100.5642}, "{'status': 0, 'code': '20116'}"]
+2022-07-05 13:45:14,366-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第20条用例
+2022-07-05 13:45:16,758-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1279, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1325, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1274, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1034, in _send_output
+    self.send(msg)
+  File "C:\Users\fangdan\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 974, in send
+    self.connect()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000013B17BF5640&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 440, in send
+    resp = conn.urlopen(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\study\pyProj\venv\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/recharge?mobilephone=18212345678&amp;amount=100.5642 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BF5640&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\study\pyProj\venv\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\test_http_request.py", line 29, in test_http_request
+    res=HttpRequest(IP + a[4],(a[5])).http_request(a[3],cookies=COOKIE)
+  File "D:\BaiduNetdiskDownload\aotu_interface_3\common\http_request.py", line 9, in http_request
+    res=requests.get(self.url,self.param,cookies=cookies)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\sessions.py", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\study\pyProj\venv\lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='119.23.241.154', port=8080): Max retries exceeded with url: /futureloan/mvc/api/member/recharge?mobilephone=18212345678&amp;amount=100.5642 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000013B17BF5640&gt;: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='total_row' class="text-center active">
+    <td>总计</td>
+    <td>20</td>
+    <td>0</td>
+    <td>0</td>
+    <td>20</td>
+    <td>通过率：0.00%</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+    <div style=" position:fixed;right:50px; bottom:30px; width:20px; height:20px;cursor:pointer">
+    <a href="#"><span class="glyphicon glyphicon-eject" style = "font-size:30px;" aria-hidden="true">
+    </span></a></div>
+    
+</body>
+</html>

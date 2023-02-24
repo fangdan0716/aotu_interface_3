@@ -1,0 +1,560 @@
+2018-07-04 20:16:31,279-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:16:31,309-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[1, '注册', '手机号和密码正常', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '18318070503', 'regname': 'regname_0627', 'pwd': '123456'}, "{ 'status': 1, 'code': '10001'}"]
+2018-07-04 20:16:31,315-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第1条用例
+2018-07-04 20:16:31,630-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:16:31,636-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:16:31,642-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[2, '注册', '手机号和密码正常,注册名不填', 'post', '/futureloan/mvc/api/member/register', {'mobilephone': '18320187023', 'regname': '', 'pwd': '123456'}, "{ 'status': 0, 'code': '20110'}"]
+2018-07-04 20:16:31,649-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第2条用例
+2018-07-04 20:16:31,869-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:16:31,876-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:16:31,884-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[3, '注册', '手机号不填，密码正常,', 'post', '/futureloan/mvc/api/member/register', {'mobilephone': '', 'regname': 'regname_0627', 'pwd': '123456'}, "{'status': 0, 'code': '20103'}"]
+2018-07-04 20:16:31,891-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第3条用例
+2018-07-04 20:16:32,119-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:16:32,125-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:16:32,131-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[4, '注册', '手机号格式不正确，密码正常,', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '2123456789', 'regname': '', 'pwd': '123456'}, "{ 'status': 0, 'code': '20109'}"]
+2018-07-04 20:16:32,136-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第4条用例
+2018-07-04 20:16:32,363-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:16:32,369-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:16:32,377-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[5, '注册', '手机号格式已被注册，密码正常,', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '18320187023', 'regname': 'regname_0627', 'pwd': '123456'}, '{"status":0,"code":"20110"}']
+2018-07-04 20:16:32,385-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第5条用例
+2018-07-04 20:16:32,645-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:16:32,651-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:16:32,657-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[6, '注册', '手机号正常密少于6位', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '18320187020', 'regname': '密5', 'pwd': '12346'}, '{"status":0,"code":"20108"}']
+2018-07-04 20:16:32,663-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第6条用例
+2018-07-04 20:16:32,888-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:16:32,895-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:16:32,901-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[7, '注册', '手机号正常密码多于18位', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '18320187020', 'regname': '密19', 'pwd': '123456123456789012221'}, '{"status":0,"code":"20108"}']
+2018-07-04 20:16:32,908-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第7条用例
+2018-07-04 20:16:33,152-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:16:33,160-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:16:33,167-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[8, '登录', '手机号和密码正常', 'get', '/futureloan/mvc/api/member/login', {'mobilephone': '18320187023', 'pwd': '123456'}, "{ 'status': 1, 'code': '10001'}"]
+2018-07-04 20:16:33,175-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第8条用例
+2018-07-04 20:16:33,399-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:16:33,405-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:16:33,412-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[9, '登录', '手机号不填，密码正常', 'post', '/futureloan/mvc/api/member/login', {'mobilephone': '', 'pwd': '123456'}, '{"status":0,"code":"20103"}']
+2018-07-04 20:16:33,419-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第9条用例
+2018-07-04 20:16:33,645-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:16:33,652-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:16:33,658-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[10, '登录', '手机号未注册，密码正常', 'get', '/futureloan/mvc/api/member/login', {'mobilephone': '18312345678', 'pwd': '123456'}, "{'status': 0, 'code': '20111'}"]
+2018-07-04 20:16:33,664-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第10条用例
+2018-07-04 20:16:33,881-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:16:33,887-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:16:33,895-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[11, '登录', '手机号正确且已注册，密码错误', 'post', '/futureloan/mvc/api/member/login', {'mobilephone': '18320187023', 'pwd': '00000000'}, "{'status': 0, 'code': '20111'}"]
+2018-07-04 20:16:33,902-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第11条用例
+2018-07-04 20:16:34,136-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:16:34,144-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:16:34,151-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[12, '登录', '手机号正确且已注册，密码空', 'get', '/futureloan/mvc/api/member/login', {'mobilephone': '18320187023', 'pwd': ' '}, "{'status': 0, 'code': '20103'}"]
+2018-07-04 20:16:34,159-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第12条用例
+2018-07-04 20:16:34,409-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:16:34,417-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:16:34,424-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[13, '充值', '手机号和充值额度正常', 'post', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': 50.0}, "{'code': '10001'}"]
+2018-07-04 20:16:34,431-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第13条用例
+2018-07-04 20:16:34,731-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:16:34,740-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:16:34,790-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[14, '充值', '充值额度50万', 'get', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': 500000.0}, " {'status': 1, 'code': '10001'}"]
+2018-07-04 20:16:34,796-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第14条用例
+2018-07-04 20:16:35,097-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:16:35,108-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:16:35,116-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[15, '充值', '充值额度小于0', 'post', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': -1.0}, "{'status': 0, 'code': '20117'}"]
+2018-07-04 20:16:35,124-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第15条用例
+2018-07-04 20:16:35,396-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:16:35,403-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:16:35,411-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[16, '充值', '充值额度多余50万', 'get', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': 500001.0}, "{'status': 0, 'code': '20117'}"]
+2018-07-04 20:16:35,418-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第16条用例
+2018-07-04 20:16:35,662-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:16:35,672-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:16:35,681-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[17, '充值', '充值额度小数点多余两位', 'post', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': 100.5642}, "{'status': 0, 'code': '20116'}"]
+2018-07-04 20:16:35,687-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第17条用例
+2018-07-04 20:16:35,941-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:16:35,949-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:16:35,956-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[18, '充值', '充值额度为空', 'get', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': ''}, "{'status': 0, 'code': '20115'}"]
+2018-07-04 20:16:35,962-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第18条用例
+2018-07-04 20:16:36,169-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:16:36,178-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:16:36,186-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[19, '充值', '充值额度非数字', 'post', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': '@!'}, "{'status': 0, 'code': '20118'}"]
+2018-07-04 20:16:36,193-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第19条用例
+2018-07-04 20:16:36,405-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:16:36,412-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:16:36,419-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[20, '充值', '不是会员', 'get', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18212345678', 'amount': 100.5642}, "{'status': 0, 'code': '20116'}"]
+2018-07-04 20:16:36,426-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第20条用例
+2018-07-04 20:16:36,642-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:23:57,168-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:23:57,195-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[1, '注册', '手机号和密码正常', 'get', '/futureloan/mvc/api/member/register', {'regname': 'regname_0627', 'mobilephone': '18318070504', 'pwd': '123456'}, "{ 'status': 1, 'code': '10001'}"]
+2018-07-04 20:23:57,201-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第1条用例
+2018-07-04 20:23:57,512-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:23:57,519-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:23:57,526-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[2, '注册', '手机号和密码正常,注册名不填', 'post', '/futureloan/mvc/api/member/register', {'regname': '', 'mobilephone': '18320187023', 'pwd': '123456'}, "{ 'status': 0, 'code': '20110'}"]
+2018-07-04 20:23:57,532-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第2条用例
+2018-07-04 20:23:57,785-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:23:57,793-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:23:57,801-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[3, '注册', '手机号不填，密码正常,', 'post', '/futureloan/mvc/api/member/register', {'regname': 'regname_0627', 'mobilephone': '', 'pwd': '123456'}, "{'status': 0, 'code': '20103'}"]
+2018-07-04 20:23:57,807-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第3条用例
+2018-07-04 20:23:58,039-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:23:58,046-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:23:58,052-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[4, '注册', '手机号格式不正确，密码正常,', 'get', '/futureloan/mvc/api/member/register', {'regname': '', 'mobilephone': '2123456789', 'pwd': '123456'}, "{ 'status': 0, 'code': '20109'}"]
+2018-07-04 20:23:58,058-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第4条用例
+2018-07-04 20:23:58,286-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:23:58,294-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:23:58,301-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[5, '注册', '手机号格式已被注册，密码正常,', 'get', '/futureloan/mvc/api/member/register', {'regname': 'regname_0627', 'mobilephone': '18320187023', 'pwd': '123456'}, '{"status":0,"code":"20110"}']
+2018-07-04 20:23:58,308-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第5条用例
+2018-07-04 20:23:58,557-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:23:58,564-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:23:58,571-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[6, '注册', '手机号正常密少于6位', 'get', '/futureloan/mvc/api/member/register', {'regname': '密5', 'mobilephone': '18320187020', 'pwd': '12346'}, '{"status":0,"code":"20108"}']
+2018-07-04 20:23:58,578-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第6条用例
+2018-07-04 20:23:58,825-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:23:58,832-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:23:58,841-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[7, '注册', '手机号正常密码多于18位', 'get', '/futureloan/mvc/api/member/register', {'regname': '密19', 'mobilephone': '18320187020', 'pwd': '123456123456789012221'}, '{"status":0,"code":"20108"}']
+2018-07-04 20:23:58,847-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第7条用例
+2018-07-04 20:23:59,195-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:23:59,202-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:23:59,210-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[8, '登录', '手机号和密码正常', 'get', '/futureloan/mvc/api/member/login', {'mobilephone': '18320187023', 'pwd': '123456'}, "{ 'status': 1, 'code': '10001'}"]
+2018-07-04 20:23:59,221-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第8条用例
+2018-07-04 20:23:59,480-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:23:59,488-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:23:59,495-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[9, '登录', '手机号不填，密码正常', 'post', '/futureloan/mvc/api/member/login', {'mobilephone': '', 'pwd': '123456'}, '{"status":0,"code":"20103"}']
+2018-07-04 20:23:59,503-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第9条用例
+2018-07-04 20:23:59,777-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:23:59,784-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:23:59,791-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[10, '登录', '手机号未注册，密码正常', 'get', '/futureloan/mvc/api/member/login', {'mobilephone': '18312345678', 'pwd': '123456'}, "{'status': 0, 'code': '20111'}"]
+2018-07-04 20:23:59,798-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第10条用例
+2018-07-04 20:24:00,140-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:24:00,148-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:24:00,157-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[11, '登录', '手机号正确且已注册，密码错误', 'post', '/futureloan/mvc/api/member/login', {'mobilephone': '18320187023', 'pwd': '00000000'}, "{'status': 0, 'code': '20111'}"]
+2018-07-04 20:24:00,166-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第11条用例
+2018-07-04 20:24:00,431-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:24:00,440-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:24:00,456-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[12, '登录', '手机号正确且已注册，密码空', 'get', '/futureloan/mvc/api/member/login', {'mobilephone': '18320187023', 'pwd': ' '}, "{'status': 0, 'code': '20103'}"]
+2018-07-04 20:24:00,465-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第12条用例
+2018-07-04 20:24:00,719-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:24:00,726-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:24:00,734-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[13, '充值', '手机号和充值额度正常', 'post', '/futureloan/mvc/api/member/recharge', {'amount': 50.0, 'mobilephone': '18320187023'}, "{'code': '10001'}"]
+2018-07-04 20:24:00,741-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第13条用例
+2018-07-04 20:24:01,064-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:24:01,071-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:24:01,079-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[14, '充值', '充值额度50万', 'get', '/futureloan/mvc/api/member/recharge', {'amount': 500000.0, 'mobilephone': '18320187023'}, " {'status': 1, 'code': '10001'}"]
+2018-07-04 20:24:01,086-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第14条用例
+2018-07-04 20:24:01,392-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:24:01,398-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:24:01,406-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[15, '充值', '充值额度小于0', 'post', '/futureloan/mvc/api/member/recharge', {'amount': -1.0, 'mobilephone': '18320187023'}, "{'status': 0, 'code': '20117'}"]
+2018-07-04 20:24:01,413-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第15条用例
+2018-07-04 20:24:01,660-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:24:01,668-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:24:01,675-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[16, '充值', '充值额度多余50万', 'get', '/futureloan/mvc/api/member/recharge', {'amount': 500001.0, 'mobilephone': '18320187023'}, "{'status': 0, 'code': '20117'}"]
+2018-07-04 20:24:01,682-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第16条用例
+2018-07-04 20:24:01,951-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:24:01,959-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:24:01,966-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[17, '充值', '充值额度小数点多余两位', 'post', '/futureloan/mvc/api/member/recharge', {'amount': 100.5642, 'mobilephone': '18320187023'}, "{'status': 0, 'code': '20116'}"]
+2018-07-04 20:24:01,974-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第17条用例
+2018-07-04 20:24:02,238-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:24:02,247-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:24:02,255-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[18, '充值', '充值额度为空', 'get', '/futureloan/mvc/api/member/recharge', {'amount': '', 'mobilephone': '18320187023'}, "{'status': 0, 'code': '20115'}"]
+2018-07-04 20:24:02,262-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第18条用例
+2018-07-04 20:24:02,539-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:24:02,545-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:24:02,552-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[19, '充值', '充值额度非数字', 'post', '/futureloan/mvc/api/member/recharge', {'amount': '@!', 'mobilephone': '18320187023'}, "{'status': 0, 'code': '20118'}"]
+2018-07-04 20:24:02,559-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第19条用例
+2018-07-04 20:24:02,823-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:24:02,831-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:24:02,839-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[20, '充值', '不是会员', 'get', '/futureloan/mvc/api/member/recharge', {'amount': 100.5642, 'mobilephone': '18212345678'}, "{'status': 0, 'code': '20116'}"]
+2018-07-04 20:24:02,846-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第20条用例
+2018-07-04 20:24:03,077-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:25:50,004-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:25:50,013-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[1, '注册', '手机号和密码正常', 'get', '/futureloan/mvc/api/member/register', {'pwd': '123456', 'mobilephone': '18318070505', 'regname': 'regname_0627'}, "{ 'status': 1, 'code': '10001'}"]
+2018-07-04 20:25:50,020-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第1条用例
+2018-07-04 20:25:50,271-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:25:50,281-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:25:50,289-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[2, '注册', '手机号和密码正常,注册名不填', 'post', '/futureloan/mvc/api/member/register', {'pwd': '123456', 'mobilephone': '18320187023', 'regname': ''}, "{ 'status': 0, 'code': '20110'}"]
+2018-07-04 20:25:50,298-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第2条用例
+2018-07-04 20:25:50,535-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:25:50,543-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:25:50,551-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[3, '注册', '手机号不填，密码正常,', 'post', '/futureloan/mvc/api/member/register', {'pwd': '123456', 'mobilephone': '', 'regname': 'regname_0627'}, "{'status': 0, 'code': '20103'}"]
+2018-07-04 20:25:50,558-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第3条用例
+2018-07-04 20:25:50,777-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:25:50,784-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:25:50,793-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[4, '注册', '手机号格式不正确，密码正常,', 'get', '/futureloan/mvc/api/member/register', {'pwd': '123456', 'mobilephone': '2123456789', 'regname': ''}, "{ 'status': 0, 'code': '20109'}"]
+2018-07-04 20:25:50,804-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第4条用例
+2018-07-04 20:25:51,037-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:25:51,044-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:25:51,051-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[5, '注册', '手机号格式已被注册，密码正常,', 'get', '/futureloan/mvc/api/member/register', {'pwd': '123456', 'mobilephone': '18320187023', 'regname': 'regname_0627'}, '{"status":0,"code":"20110"}']
+2018-07-04 20:25:51,059-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第5条用例
+2018-07-04 20:25:51,370-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:25:51,379-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:25:51,387-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[6, '注册', '手机号正常密少于6位', 'get', '/futureloan/mvc/api/member/register', {'pwd': '12346', 'mobilephone': '18320187020', 'regname': '密5'}, '{"status":0,"code":"20108"}']
+2018-07-04 20:25:51,394-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第6条用例
+2018-07-04 20:25:51,607-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:25:51,613-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:25:51,620-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[7, '注册', '手机号正常密码多于18位', 'get', '/futureloan/mvc/api/member/register', {'pwd': '123456123456789012221', 'mobilephone': '18320187020', 'regname': '密19'}, '{"status":0,"code":"20108"}']
+2018-07-04 20:25:51,627-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第7条用例
+2018-07-04 20:25:51,854-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:25:51,861-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:25:51,869-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[8, '登录', '手机号和密码正常', 'get', '/futureloan/mvc/api/member/login', {'pwd': '123456', 'mobilephone': '18320187023'}, "{ 'status': 1, 'code': '10001'}"]
+2018-07-04 20:25:51,877-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第8条用例
+2018-07-04 20:25:52,114-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:25:52,123-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:25:52,130-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[9, '登录', '手机号不填，密码正常', 'post', '/futureloan/mvc/api/member/login', {'pwd': '123456', 'mobilephone': ''}, '{"status":0,"code":"20103"}']
+2018-07-04 20:25:52,136-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第9条用例
+2018-07-04 20:25:52,356-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:25:52,362-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:25:52,368-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[10, '登录', '手机号未注册，密码正常', 'get', '/futureloan/mvc/api/member/login', {'pwd': '123456', 'mobilephone': '18312345678'}, "{'status': 0, 'code': '20111'}"]
+2018-07-04 20:25:52,374-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第10条用例
+2018-07-04 20:25:52,594-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:25:52,601-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:25:52,608-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[11, '登录', '手机号正确且已注册，密码错误', 'post', '/futureloan/mvc/api/member/login', {'pwd': '00000000', 'mobilephone': '18320187023'}, "{'status': 0, 'code': '20111'}"]
+2018-07-04 20:25:52,615-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第11条用例
+2018-07-04 20:25:52,830-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:25:52,836-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:25:52,844-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[12, '登录', '手机号正确且已注册，密码空', 'get', '/futureloan/mvc/api/member/login', {'pwd': ' ', 'mobilephone': '18320187023'}, "{'status': 0, 'code': '20103'}"]
+2018-07-04 20:25:52,851-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第12条用例
+2018-07-04 20:25:53,065-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:25:53,073-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:25:53,079-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[13, '充值', '手机号和充值额度正常', 'post', '/futureloan/mvc/api/member/recharge', {'amount': 50.0, 'mobilephone': '18320187023'}, "{'code': '10001'}"]
+2018-07-04 20:25:53,086-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第13条用例
+2018-07-04 20:25:53,359-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:25:53,366-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:25:53,372-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[14, '充值', '充值额度50万', 'get', '/futureloan/mvc/api/member/recharge', {'amount': 500000.0, 'mobilephone': '18320187023'}, " {'status': 1, 'code': '10001'}"]
+2018-07-04 20:25:53,379-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第14条用例
+2018-07-04 20:25:53,627-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:25:53,635-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:25:53,641-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[15, '充值', '充值额度小于0', 'post', '/futureloan/mvc/api/member/recharge', {'amount': -1.0, 'mobilephone': '18320187023'}, "{'status': 0, 'code': '20117'}"]
+2018-07-04 20:25:53,649-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第15条用例
+2018-07-04 20:25:53,874-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:25:53,883-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:25:53,893-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[16, '充值', '充值额度多余50万', 'get', '/futureloan/mvc/api/member/recharge', {'amount': 500001.0, 'mobilephone': '18320187023'}, "{'status': 0, 'code': '20117'}"]
+2018-07-04 20:25:53,900-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第16条用例
+2018-07-04 20:25:54,099-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:25:54,106-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:25:54,112-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[17, '充值', '充值额度小数点多余两位', 'post', '/futureloan/mvc/api/member/recharge', {'amount': 100.5642, 'mobilephone': '18320187023'}, "{'status': 0, 'code': '20116'}"]
+2018-07-04 20:25:54,117-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第17条用例
+2018-07-04 20:25:54,415-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:25:54,422-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:25:54,428-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[18, '充值', '充值额度为空', 'get', '/futureloan/mvc/api/member/recharge', {'amount': '', 'mobilephone': '18320187023'}, "{'status': 0, 'code': '20115'}"]
+2018-07-04 20:25:54,433-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第18条用例
+2018-07-04 20:25:54,642-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:25:54,648-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:25:54,655-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[19, '充值', '充值额度非数字', 'post', '/futureloan/mvc/api/member/recharge', {'amount': '@!', 'mobilephone': '18320187023'}, "{'status': 0, 'code': '20118'}"]
+2018-07-04 20:25:54,663-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第19条用例
+2018-07-04 20:25:54,884-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:25:54,892-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:25:54,899-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[20, '充值', '不是会员', 'get', '/futureloan/mvc/api/member/recharge', {'amount': 100.5642, 'mobilephone': '18212345678'}, "{'status': 0, 'code': '20116'}"]
+2018-07-04 20:25:54,907-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第20条用例
+2018-07-04 20:25:55,121-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:26:21,452-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:26:21,459-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[1, '注册', '手机号和密码正常', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '18318070506', 'pwd': '123456', 'regname': 'regname_0627'}, "{ 'status': 1, 'code': '10001'}"]
+2018-07-04 20:26:21,465-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第1条用例
+2018-07-04 20:26:21,709-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:26:21,717-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:26:21,724-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[2, '注册', '手机号和密码正常,注册名不填', 'post', '/futureloan/mvc/api/member/register', {'mobilephone': '18320187023', 'pwd': '123456', 'regname': ''}, "{ 'status': 0, 'code': '20110'}"]
+2018-07-04 20:26:21,729-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第2条用例
+2018-07-04 20:26:21,968-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:26:21,974-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:26:21,981-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[3, '注册', '手机号不填，密码正常,', 'post', '/futureloan/mvc/api/member/register', {'mobilephone': '', 'pwd': '123456', 'regname': 'regname_0627'}, "{'status': 0, 'code': '20103'}"]
+2018-07-04 20:26:21,989-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第3条用例
+2018-07-04 20:26:22,215-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:26:22,221-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:26:22,228-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[4, '注册', '手机号格式不正确，密码正常,', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '2123456789', 'pwd': '123456', 'regname': ''}, "{ 'status': 0, 'code': '20109'}"]
+2018-07-04 20:26:22,237-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第4条用例
+2018-07-04 20:26:22,450-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:26:22,456-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:26:22,462-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[5, '注册', '手机号格式已被注册，密码正常,', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '18320187023', 'pwd': '123456', 'regname': 'regname_0627'}, '{"status":0,"code":"20110"}']
+2018-07-04 20:26:22,469-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第5条用例
+2018-07-04 20:26:22,757-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:26:22,764-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:26:22,770-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[6, '注册', '手机号正常密少于6位', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '18320187020', 'pwd': '12346', 'regname': '密5'}, '{"status":0,"code":"20108"}']
+2018-07-04 20:26:22,778-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第6条用例
+2018-07-04 20:26:22,997-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:26:23,004-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:26:23,011-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[7, '注册', '手机号正常密码多于18位', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '18320187020', 'pwd': '123456123456789012221', 'regname': '密19'}, '{"status":0,"code":"20108"}']
+2018-07-04 20:26:23,017-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第7条用例
+2018-07-04 20:26:23,265-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:26:23,274-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:26:23,282-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[8, '登录', '手机号和密码正常', 'get', '/futureloan/mvc/api/member/login', {'mobilephone': '18320187023', 'pwd': '123456'}, "{ 'status': 1, 'code': '10001'}"]
+2018-07-04 20:26:23,288-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第8条用例
+2018-07-04 20:26:23,519-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:26:23,526-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:26:23,532-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[9, '登录', '手机号不填，密码正常', 'post', '/futureloan/mvc/api/member/login', {'mobilephone': '', 'pwd': '123456'}, '{"status":0,"code":"20103"}']
+2018-07-04 20:26:23,538-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第9条用例
+2018-07-04 20:26:23,749-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:26:23,761-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:26:23,769-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[10, '登录', '手机号未注册，密码正常', 'get', '/futureloan/mvc/api/member/login', {'mobilephone': '18312345678', 'pwd': '123456'}, "{'status': 0, 'code': '20111'}"]
+2018-07-04 20:26:23,778-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第10条用例
+2018-07-04 20:26:24,009-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:26:24,017-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:26:24,025-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[11, '登录', '手机号正确且已注册，密码错误', 'post', '/futureloan/mvc/api/member/login', {'mobilephone': '18320187023', 'pwd': '00000000'}, "{'status': 0, 'code': '20111'}"]
+2018-07-04 20:26:24,034-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第11条用例
+2018-07-04 20:26:24,289-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:26:24,295-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:26:24,302-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[12, '登录', '手机号正确且已注册，密码空', 'get', '/futureloan/mvc/api/member/login', {'mobilephone': '18320187023', 'pwd': ' '}, "{'status': 0, 'code': '20103'}"]
+2018-07-04 20:26:24,309-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第12条用例
+2018-07-04 20:26:24,535-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:26:24,541-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:26:24,550-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[13, '充值', '手机号和充值额度正常', 'post', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': 50.0}, "{'code': '10001'}"]
+2018-07-04 20:26:24,559-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第13条用例
+2018-07-04 20:26:24,827-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:26:24,833-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:26:24,839-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[14, '充值', '充值额度50万', 'get', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': 500000.0}, " {'status': 1, 'code': '10001'}"]
+2018-07-04 20:26:24,846-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第14条用例
+2018-07-04 20:26:25,108-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:26:25,116-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:26:25,122-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[15, '充值', '充值额度小于0', 'post', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': -1.0}, "{'status': 0, 'code': '20117'}"]
+2018-07-04 20:26:25,127-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第15条用例
+2018-07-04 20:26:25,347-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:26:25,360-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:26:25,371-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[16, '充值', '充值额度多余50万', 'get', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': 500001.0}, "{'status': 0, 'code': '20117'}"]
+2018-07-04 20:26:25,378-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第16条用例
+2018-07-04 20:26:25,597-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:26:25,604-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:26:25,611-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[17, '充值', '充值额度小数点多余两位', 'post', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': 100.5642}, "{'status': 0, 'code': '20116'}"]
+2018-07-04 20:26:25,617-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第17条用例
+2018-07-04 20:26:25,829-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:26:25,837-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:26:25,844-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[18, '充值', '充值额度为空', 'get', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': ''}, "{'status': 0, 'code': '20115'}"]
+2018-07-04 20:26:25,850-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第18条用例
+2018-07-04 20:26:26,072-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:26:26,081-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:26:26,089-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[19, '充值', '充值额度非数字', 'post', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': '@!'}, "{'status': 0, 'code': '20118'}"]
+2018-07-04 20:26:26,098-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第19条用例
+2018-07-04 20:26:26,328-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 20:26:26,337-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 20:26:26,344-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[20, '充值', '不是会员', 'get', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18212345678', 'amount': 100.5642}, "{'status': 0, 'code': '20116'}"]
+2018-07-04 20:26:26,350-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第20条用例
+2018-07-04 20:26:26,570-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 21:18:36,241-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 21:18:36,413-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[1, '注册', '手机号和密码正常', 'get', '/futureloan/mvc/api/member/register', {'regname': 'regname_0627', 'pwd': '123456', 'mobilephone': '18318070508'}, "{ 'status': 1, 'code': '10001'}"]
+2018-07-04 21:18:36,433-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第1条用例
+2018-07-04 21:18:36,681-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 21:18:36,773-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 21:18:36,780-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[2, '注册', '手机号和密码正常,注册名不填', 'post', '/futureloan/mvc/api/member/register', {'regname': '', 'pwd': '123456', 'mobilephone': '18320187023'}, "{ 'status': 0, 'code': '20110'}"]
+2018-07-04 21:18:36,787-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第2条用例
+2018-07-04 21:18:37,225-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 21:18:37,314-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 21:18:37,322-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[3, '注册', '手机号不填，密码正常,', 'post', '/futureloan/mvc/api/member/register', {'regname': 'regname_0627', 'pwd': '123456', 'mobilephone': ''}, "{'status': 0, 'code': '20103'}"]
+2018-07-04 21:18:37,328-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第3条用例
+2018-07-04 21:18:37,567-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 21:18:37,667-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 21:18:37,677-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[4, '注册', '手机号格式不正确，密码正常,', 'get', '/futureloan/mvc/api/member/register', {'regname': '', 'pwd': '123456', 'mobilephone': '2123456789'}, "{ 'status': 0, 'code': '20109'}"]
+2018-07-04 21:18:37,684-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第4条用例
+2018-07-04 21:18:37,894-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 21:18:37,902-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 21:18:37,912-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[5, '注册', '手机号格式已被注册，密码正常,', 'get', '/futureloan/mvc/api/member/register', {'regname': 'regname_0627', 'pwd': '123456', 'mobilephone': '18320187023'}, '{"status":0,"code":"20110"}']
+2018-07-04 21:18:37,920-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第5条用例
+2018-07-04 21:18:38,174-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 21:18:38,182-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 21:18:38,188-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[6, '注册', '手机号正常密少于6位', 'get', '/futureloan/mvc/api/member/register', {'regname': '密5', 'pwd': '12346', 'mobilephone': '18320187020'}, '{"status":0,"code":"20108"}']
+2018-07-04 21:18:38,197-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第6条用例
+2018-07-04 21:18:38,395-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 21:18:38,475-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 21:18:38,494-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[7, '注册', '手机号正常密码多于18位', 'get', '/futureloan/mvc/api/member/register', {'regname': '密19', 'pwd': '123456123456789012221', 'mobilephone': '18320187020'}, '{"status":0,"code":"20108"}']
+2018-07-04 21:18:38,502-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第7条用例
+2018-07-04 21:18:38,703-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 21:18:38,710-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 21:18:38,718-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[8, '登录', '手机号和密码正常', 'get', '/futureloan/mvc/api/member/login', {'pwd': '123456', 'mobilephone': '18320187023'}, "{ 'status': 1, 'code': '10001'}"]
+2018-07-04 21:18:38,725-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第8条用例
+2018-07-04 21:18:38,955-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 21:18:38,963-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 21:18:38,969-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[9, '登录', '手机号不填，密码正常', 'post', '/futureloan/mvc/api/member/login', {'pwd': '123456', 'mobilephone': ''}, '{"status":0,"code":"20103"}']
+2018-07-04 21:18:38,977-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第9条用例
+2018-07-04 21:18:39,176-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 21:18:39,251-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 21:18:39,271-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[10, '登录', '手机号未注册，密码正常', 'get', '/futureloan/mvc/api/member/login', {'pwd': '123456', 'mobilephone': '18312345678'}, "{'status': 0, 'code': '20111'}"]
+2018-07-04 21:18:39,290-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第10条用例
+2018-07-04 21:18:39,502-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 21:18:39,580-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 21:18:39,587-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[11, '登录', '手机号正确且已注册，密码错误', 'post', '/futureloan/mvc/api/member/login', {'pwd': '00000000', 'mobilephone': '18320187023'}, "{'status': 0, 'code': '20111'}"]
+2018-07-04 21:18:39,595-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第11条用例
+2018-07-04 21:18:39,817-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 21:18:39,966-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 21:18:39,986-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[12, '登录', '手机号正确且已注册，密码空', 'get', '/futureloan/mvc/api/member/login', {'pwd': ' ', 'mobilephone': '18320187023'}, "{'status': 0, 'code': '20103'}"]
+2018-07-04 21:18:40,004-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第12条用例
+2018-07-04 21:18:40,212-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 21:18:40,220-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 21:18:40,291-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[13, '充值', '手机号和充值额度正常', 'post', '/futureloan/mvc/api/member/recharge', {'amount': 50.0, 'mobilephone': '18320187023'}, "{'code': '10001'}"]
+2018-07-04 21:18:40,301-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第13条用例
+2018-07-04 21:18:40,573-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 21:18:40,689-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 21:18:40,704-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[14, '充值', '充值额度50万', 'get', '/futureloan/mvc/api/member/recharge', {'amount': 500000.0, 'mobilephone': '18320187023'}, " {'status': 1, 'code': '10001'}"]
+2018-07-04 21:18:40,713-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第14条用例
+2018-07-04 21:18:40,976-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 21:18:41,111-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 21:18:41,126-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[15, '充值', '充值额度小于0', 'post', '/futureloan/mvc/api/member/recharge', {'amount': -1.0, 'mobilephone': '18320187023'}, "{'status': 0, 'code': '20117'}"]
+2018-07-04 21:18:41,135-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第15条用例
+2018-07-04 21:18:41,342-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 21:18:41,350-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 21:18:41,358-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[16, '充值', '充值额度多余50万', 'get', '/futureloan/mvc/api/member/recharge', {'amount': 500001.0, 'mobilephone': '18320187023'}, "{'status': 0, 'code': '20117'}"]
+2018-07-04 21:18:41,364-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第16条用例
+2018-07-04 21:18:41,583-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 21:18:41,591-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 21:18:41,599-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[17, '充值', '充值额度小数点多余两位', 'post', '/futureloan/mvc/api/member/recharge', {'amount': 100.5642, 'mobilephone': '18320187023'}, "{'status': 0, 'code': '20116'}"]
+2018-07-04 21:18:41,606-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第17条用例
+2018-07-04 21:18:41,811-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 21:18:41,819-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 21:18:41,828-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[18, '充值', '充值额度为空', 'get', '/futureloan/mvc/api/member/recharge', {'amount': '', 'mobilephone': '18320187023'}, "{'status': 0, 'code': '20115'}"]
+2018-07-04 21:18:41,835-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第18条用例
+2018-07-04 21:18:42,039-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 21:18:42,048-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 21:18:42,056-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[19, '充值', '充值额度非数字', 'post', '/futureloan/mvc/api/member/recharge', {'amount': '@!', 'mobilephone': '18320187023'}, "{'status': 0, 'code': '20118'}"]
+2018-07-04 21:18:42,063-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第19条用例
+2018-07-04 21:18:42,272-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 21:18:42,280-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 21:18:42,288-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[20, '充值', '不是会员', 'get', '/futureloan/mvc/api/member/recharge', {'amount': 100.5642, 'mobilephone': '18212345678'}, "{'status': 0, 'code': '20116'}"]
+2018-07-04 21:18:42,297-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第20条用例
+2018-07-04 21:18:42,527-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 22:04:32,783-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 22:04:32,869-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[1, '注册', '手机号和密码正常', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '18318070509', 'regname': 'regname_0627', 'pwd': '123456'}, "{ 'status': 1, 'code': '10001'}"]
+2018-07-04 22:04:32,876-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第1条用例
+2018-07-04 22:04:34,042-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 22:04:34,389-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 22:04:34,399-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[2, '注册', '手机号和密码正常,注册名不填', 'post', '/futureloan/mvc/api/member/register', {'mobilephone': '18320187023', 'regname': '', 'pwd': '123456'}, "{ 'status': 0, 'code': '20110'}"]
+2018-07-04 22:04:34,405-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第2条用例
+2018-07-04 22:04:35,524-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 22:04:35,546-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 22:04:35,562-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[3, '注册', '手机号不填，密码正常,', 'post', '/futureloan/mvc/api/member/register', {'mobilephone': '', 'regname': 'regname_0627', 'pwd': '123456'}, "{'status': 0, 'code': '20103'}"]
+2018-07-04 22:04:35,573-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第3条用例
+2018-07-04 22:04:36,695-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 22:04:36,712-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 22:04:36,731-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[4, '注册', '手机号格式不正确，密码正常,', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '2123456789', 'regname': '', 'pwd': '123456'}, "{ 'status': 0, 'code': '20109'}"]
+2018-07-04 22:04:36,741-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第4条用例
+2018-07-04 22:04:37,855-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 22:04:37,892-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 22:04:37,902-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[5, '注册', '手机号格式已被注册，密码正常,', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '18320187023', 'regname': 'regname_0627', 'pwd': '123456'}, '{"status":0,"code":"20110"}']
+2018-07-04 22:04:37,910-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第5条用例
+2018-07-04 22:04:39,037-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 22:04:39,068-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 22:04:39,083-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[6, '注册', '手机号正常密少于6位', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '18320187020', 'regname': '密5', 'pwd': '12346'}, '{"status":0,"code":"20108"}']
+2018-07-04 22:04:39,091-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第6条用例
+2018-07-04 22:04:40,263-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 22:04:40,295-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 22:04:40,315-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[7, '注册', '手机号正常密码多于18位', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '18320187020', 'regname': '密19', 'pwd': '123456123456789012221'}, '{"status":0,"code":"20108"}']
+2018-07-04 22:04:40,322-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第7条用例
+2018-07-04 22:04:41,439-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 22:04:41,453-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 22:04:41,461-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[8, '登录', '手机号和密码正常', 'get', '/futureloan/mvc/api/member/login', {'mobilephone': '18320187023', 'pwd': '123456'}, "{ 'status': 1, 'code': '10001'}"]
+2018-07-04 22:04:41,468-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第8条用例
+2018-07-04 22:04:42,590-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 22:04:42,606-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 22:04:42,625-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[9, '登录', '手机号不填，密码正常', 'post', '/futureloan/mvc/api/member/login', {'mobilephone': '', 'pwd': '123456'}, '{"status":0,"code":"20103"}']
+2018-07-04 22:04:42,633-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第9条用例
+2018-07-04 22:04:43,760-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 22:04:43,774-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 22:04:43,784-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[10, '登录', '手机号未注册，密码正常', 'get', '/futureloan/mvc/api/member/login', {'mobilephone': '18312345678', 'pwd': '123456'}, "{'status': 0, 'code': '20111'}"]
+2018-07-04 22:04:43,791-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第10条用例
+2018-07-04 22:04:44,923-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 22:04:44,944-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 22:04:44,952-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[11, '登录', '手机号正确且已注册，密码错误', 'post', '/futureloan/mvc/api/member/login', {'mobilephone': '18320187023', 'pwd': '00000000'}, "{'status': 0, 'code': '20111'}"]
+2018-07-04 22:04:44,959-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第11条用例
+2018-07-04 22:04:46,076-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 22:04:46,096-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 22:04:46,106-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[12, '登录', '手机号正确且已注册，密码空', 'get', '/futureloan/mvc/api/member/login', {'mobilephone': '18320187023', 'pwd': ' '}, "{'status': 0, 'code': '20103'}"]
+2018-07-04 22:04:46,122-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第12条用例
+2018-07-04 22:04:47,244-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 22:04:47,261-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 22:04:47,269-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[13, '充值', '手机号和充值额度正常', 'post', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': 50.0}, "{'code': '10001'}"]
+2018-07-04 22:04:47,275-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第13条用例
+2018-07-04 22:04:48,392-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 22:04:48,481-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 22:04:48,526-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[14, '充值', '充值额度50万', 'get', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': 500000.0}, " {'status': 1, 'code': '10001'}"]
+2018-07-04 22:04:48,532-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第14条用例
+2018-07-04 22:04:49,641-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 22:04:49,670-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 22:04:49,745-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[15, '充值', '充值额度小于0', 'post', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': -1.0}, "{'status': 0, 'code': '20117'}"]
+2018-07-04 22:04:49,762-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第15条用例
+2018-07-04 22:04:50,886-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 22:04:50,975-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 22:04:50,990-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[16, '充值', '充值额度多余50万', 'get', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': 500001.0}, "{'status': 0, 'code': '20117'}"]
+2018-07-04 22:04:50,996-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第16条用例
+2018-07-04 22:04:52,108-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 22:04:52,214-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 22:04:52,225-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[17, '充值', '充值额度小数点多余两位', 'post', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': 100.5642}, "{'status': 0, 'code': '20116'}"]
+2018-07-04 22:04:52,233-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第17条用例
+2018-07-04 22:04:53,354-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 22:04:53,378-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 22:04:53,453-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[18, '充值', '充值额度为空', 'get', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': ''}, "{'status': 0, 'code': '20115'}"]
+2018-07-04 22:04:53,474-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第18条用例
+2018-07-04 22:04:54,594-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 22:04:54,716-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 22:04:54,742-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[19, '充值', '充值额度非数字', 'post', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': '@!'}, "{'status': 0, 'code': '20118'}"]
+2018-07-04 22:04:54,749-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第19条用例
+2018-07-04 22:04:56,076-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2018-07-04 22:04:56,166-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2018-07-04 22:04:56,177-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[20, '充值', '不是会员', 'get', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18212345678', 'amount': 100.5642}, "{'status': 0, 'code': '20116'}"]
+2018-07-04 22:04:56,185-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第20条用例
+2018-07-04 22:05:14,743-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2022-07-05 13:44:25,421-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:25,421-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[1, '注册', '手机号和密码正常', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '18318070513', 'pwd': '123456', 'regname': 'regname_0627'}, "{ 'status': 1, 'code': '10001'}"]
+2022-07-05 13:44:25,421-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第1条用例
+2022-07-05 13:44:27,868-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2022-07-05 13:44:27,918-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:27,918-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[2, '注册', '手机号和密码正常,注册名不填', 'post', '/futureloan/mvc/api/member/register', {'mobilephone': '18320187023', 'pwd': '123456', 'regname': ''}, "{ 'status': 0, 'code': '20110'}"]
+2022-07-05 13:44:27,918-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第2条用例
+2022-07-05 13:44:30,297-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2022-07-05 13:44:30,298-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:30,298-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[3, '注册', '手机号不填，密码正常,', 'post', '/futureloan/mvc/api/member/register', {'mobilephone': '', 'pwd': '123456', 'regname': 'regname_0627'}, "{'status': 0, 'code': '20103'}"]
+2022-07-05 13:44:30,298-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第3条用例
+2022-07-05 13:44:32,746-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2022-07-05 13:44:32,746-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:32,746-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[4, '注册', '手机号格式不正确，密码正常,', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '2123456789', 'pwd': '123456', 'regname': ''}, "{ 'status': 0, 'code': '20109'}"]
+2022-07-05 13:44:32,746-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第4条用例
+2022-07-05 13:44:35,126-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2022-07-05 13:44:35,137-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:35,137-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[5, '注册', '手机号格式已被注册，密码正常,', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '18320187023', 'pwd': '123456', 'regname': 'regname_0627'}, '{"status":0,"code":"20110"}']
+2022-07-05 13:44:35,138-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第5条用例
+2022-07-05 13:44:37,497-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2022-07-05 13:44:37,497-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:37,497-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[6, '注册', '手机号正常密少于6位', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '18320187020', 'pwd': '12346', 'regname': '密5'}, '{"status":0,"code":"20108"}']
+2022-07-05 13:44:37,497-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第6条用例
+2022-07-05 13:44:39,902-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2022-07-05 13:44:39,902-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:39,902-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[7, '注册', '手机号正常密码多于18位', 'get', '/futureloan/mvc/api/member/register', {'mobilephone': '18320187020', 'pwd': '123456123456789012221', 'regname': '密19'}, '{"status":0,"code":"20108"}']
+2022-07-05 13:44:39,902-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第7条用例
+2022-07-05 13:44:42,253-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2022-07-05 13:44:42,258-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:42,258-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[8, '登录', '手机号和密码正常', 'get', '/futureloan/mvc/api/member/login', {'mobilephone': '18320187023', 'pwd': '123456'}, "{ 'status': 1, 'code': '10001'}"]
+2022-07-05 13:44:42,258-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第8条用例
+2022-07-05 13:44:44,676-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2022-07-05 13:44:44,677-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:44,677-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[9, '登录', '手机号不填，密码正常', 'post', '/futureloan/mvc/api/member/login', {'mobilephone': '', 'pwd': '123456'}, '{"status":0,"code":"20103"}']
+2022-07-05 13:44:44,677-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第9条用例
+2022-07-05 13:44:50,461-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2022-07-05 13:44:50,462-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:50,462-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[10, '登录', '手机号未注册，密码正常', 'get', '/futureloan/mvc/api/member/login', {'mobilephone': '18312345678', 'pwd': '123456'}, "{'status': 0, 'code': '20111'}"]
+2022-07-05 13:44:50,462-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第10条用例
+2022-07-05 13:44:52,867-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2022-07-05 13:44:52,869-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:52,869-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[11, '登录', '手机号正确且已注册，密码错误', 'post', '/futureloan/mvc/api/member/login', {'mobilephone': '18320187023', 'pwd': '00000000'}, "{'status': 0, 'code': '20111'}"]
+2022-07-05 13:44:52,870-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第11条用例
+2022-07-05 13:44:55,228-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2022-07-05 13:44:55,228-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:55,228-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[12, '登录', '手机号正确且已注册，密码空', 'get', '/futureloan/mvc/api/member/login', {'mobilephone': '18320187023', 'pwd': ' '}, "{'status': 0, 'code': '20103'}"]
+2022-07-05 13:44:55,228-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第12条用例
+2022-07-05 13:44:57,638-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2022-07-05 13:44:57,640-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:44:57,641-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[13, '充值', '手机号和充值额度正常', 'post', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': 50.0}, "{'code': '10001'}"]
+2022-07-05 13:44:57,641-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第13条用例
+2022-07-05 13:45:00,010-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2022-07-05 13:45:00,010-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:45:00,010-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[14, '充值', '充值额度50万', 'get', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': 500000.0}, " {'status': 1, 'code': '10001'}"]
+2022-07-05 13:45:00,010-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第14条用例
+2022-07-05 13:45:02,339-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2022-07-05 13:45:02,341-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:45:02,342-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[15, '充值', '充值额度小于0', 'post', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': -1.0}, "{'status': 0, 'code': '20117'}"]
+2022-07-05 13:45:02,342-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第15条用例
+2022-07-05 13:45:04,794-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2022-07-05 13:45:04,794-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:45:04,794-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[16, '充值', '充值额度多余50万', 'get', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': 500001.0}, "{'status': 0, 'code': '20117'}"]
+2022-07-05 13:45:04,794-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第16条用例
+2022-07-05 13:45:07,272-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2022-07-05 13:45:07,272-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:45:07,272-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[17, '充值', '充值额度小数点多余两位', 'post', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': 100.5642}, "{'status': 0, 'code': '20116'}"]
+2022-07-05 13:45:07,278-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第17条用例
+2022-07-05 13:45:09,614-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2022-07-05 13:45:09,614-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:45:09,614-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[18, '充值', '充值额度为空', 'get', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': ''}, "{'status': 0, 'code': '20115'}"]
+2022-07-05 13:45:09,614-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第18条用例
+2022-07-05 13:45:12,010-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2022-07-05 13:45:12,010-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:45:12,010-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[19, '充值', '充值额度非数字', 'post', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18320187023', 'amount': '@!'}, "{'status': 0, 'code': '20118'}"]
+2022-07-05 13:45:12,014-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第19条用例
+2022-07-05 13:45:14,358-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
+2022-07-05 13:45:14,358-DEBUG-my_log.py-aoto_case -日志信息 -开始执行测试用例!!!
+2022-07-05 13:45:14,358-DEBUG-my_log.py-aoto_case -日志信息 -测试数据是:[20, '充值', '不是会员', 'get', '/futureloan/mvc/api/member/recharge', {'mobilephone': '18212345678', 'amount': 100.5642}, "{'status': 0, 'code': '20116'}"]
+2022-07-05 13:45:14,366-DEBUG-my_log.py-aoto_case -日志信息 -目前正在执行第20条用例
+2022-07-05 13:45:16,758-DEBUG-my_log.py-aoto_case -日志信息 -结束执行测试用例!!!
